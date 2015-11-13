@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Success Page</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+	<div id='container'>
+		<p style='height: 70px; width: 300px; background-color: green;'>The email address you entered {{request.form['email']}} is a VALID email address! Thank you!</p>
+		<h2>Email Addresses Entered:</h2>
+		{% for email in emails: %}
+			<p>{{email['email_address']}} {{email['created_at']}}</p>
+		{% endfor %}
+	</div>
+</body>
+</html>
